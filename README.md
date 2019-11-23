@@ -17,7 +17,7 @@ I recommend [Git for Windows](https://gitforwindows.org/).
 
 ## Usage
 
-1. Close this repository.
+1. Clone this repository.
 1. Give `ToshitaiRecorder` a permission of execution.
 1. Run.
 1. Wait.
