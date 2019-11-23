@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# toshitai starts at 23:30, and ends at 23:59, so duration is 1740 secs
+now_date=`date +%Y%m%d`
+#start_hours=23
+#start_mins=30
+start_hours=16 #debug
+start_mins=30 #debug
+start_time=`date --date "$now_date $start_hours hours $start_mins minutes" +%s`
+now_time=`date +%s`
+duration=1743
+
+echo "Now   : " `date +"%Y/%m/%d %H:%M:%S"`
+echo "Starts: " `date --date "$now_date $start_hours hours $start_mins minutes" +"%Y/%m/%d %H:%M:%S"`
+
+# wait until 2 secs before the start
+((waiting = start_time - now_time - 2)) 
+if [ $waiting -gt 0 ] ; then
+  printf 'Wait recording for '$waiting' secs\n'
+  sleep $waiting
+fi
+
+# The base episode is 189 on 2019/11/12
+base_date=20191112
+base_episode=189
+base_date_s=`date --date "$base_date" +%s`
+now_date_s=`date --date "$date" +%s`
+((diff = (now_date_s - base_date_s) / 60 / 60 / 24 / 7))
+((episode = base_episode + diff))
+
+file="$episode"_"$now_date"
+
+while [[ -e "$file".flv || -e "$file".mp4 ]]
+do
+  echo "Already exists "$file" file! We connect some random characters."
+  file+="_"
+  file+=`date +%N`
+done
+
+printf 'Recording for '$duration' secs to '$file'.flv and '$file'.mp4\n\n'
+
+rtmpdump -r rtmp://fms-base1.mitene.ad.jp/agqr/aandg1b --stop $duration --live -o $file.flv
+ffmpeg -i $file.flv -acodec copy -vcodec copy $file.mp4
+
+printf '\nSaved to '$file'.flv and '$file'.mp4\n'
+
