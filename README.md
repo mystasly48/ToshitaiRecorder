@@ -1,15 +1,19 @@
 # ToshitaiRecorder
 
-ONLY FOR PERSONAL USE.
+This is a script that records "Seven Eleven Presents - Sakura Toshitai Onishi"
 
-DO NOT UPLOAD any videos which recorderd by this script.
+Official website: [セブン-イレブン presents 佐倉としたい大西 | インターネットラジオステーション＜音泉＞](https://www.onsen.ag/program/toshitai/)
+
+**DO NOT UPLOAD** any videos which recorderd by this script.
+
+**ONLY FOR PERSONAL USE.**
 
 ## Requirements
 
-You need to install rtmpdump and ffmpeg.
+You need to install [rtmpdump](https://rtmpdump.mplayerhq.hu/) and [ffmpeg](https://www.ffmpeg.org/).
 
 Also, if you are Windows user, you need an environment that can run bash script.
-I recommend Git Bash.
+I recommend [Git for Windows](https://gitforwindows.org/).
 
 ## Usage
 
