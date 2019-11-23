@@ -25,3 +25,7 @@ chmod u+x ./ToshitaiRecorder
 ./ToshitaiRecorder
 ```
 
+## Original
+
+[mystasly48/ToshitaiRecorder.sh on GitHub Gist](https://gist.github.com/mystasly48/07b4b4167cfbb91c97bec846dd2c5c3d)
+
