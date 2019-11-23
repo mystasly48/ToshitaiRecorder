@@ -8,7 +8,7 @@ DO NOT UPLOAD any videos which recorderd by this script.
 
 You need to install rtmpdump and ffmpeg.
 
-Also, if you are Windows user, you need to the environment that can run bash script.
+Also, if you are Windows user, you need an environment that can run bash script.
 I recommend Git Bash.
 
 ## Usage
