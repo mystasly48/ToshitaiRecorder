@@ -26,9 +26,11 @@ now_date_s=`date --date "$date" +%s`
 ((diff = (now_date_s - base_date_s) / 60 / 60 / 24 / 7))
 ((episode = base_episode + diff))
 
+path=""
 file="$episode"_"$now_date"
+full="$path""$file"
 
-while [[ -e "$file".flv || -e "$file".mp4 ]]
+while [[ -e "$full".flv || -e "$full".mp4 ]]
 do
   echo "Already exists "$file" file! We connect some random characters."
   file+="_"
@@ -37,8 +39,8 @@ done
 
 printf 'Recording for '$duration' secs to '$file'.flv and '$file'.mp4\n\n'
 
-rtmpdump -r rtmp://fms-base1.mitene.ad.jp/agqr/aandg1b --stop $duration --live -o $file.flv
-ffmpeg -i $file.flv -acodec copy -vcodec copy $file.mp4
+rtmpdump -r rtmp://fms-base1.mitene.ad.jp/agqr/aandg1b --stop $duration --live -o $full.flv
+ffmpeg -i $full.flv -acodec copy -vcodec copy $full.mp4
 
 printf '\nSaved to '$file'.flv and '$file'.mp4\n'
 
