@@ -4,7 +4,7 @@ This is a script that records "Seven Eleven Presents - Sakura Toshitai Onishi"
 
 Official website: [セブン-イレブン presents 佐倉としたい大西 | インターネットラジオステーション＜音泉＞](https://www.onsen.ag/program/toshitai/)
 
-**DO NOT UPLOAD** any videos which recorderd by this script.
+**DO NOT SHARE ANY VIDEOS** which recorderd by this script.
 
 **ONLY FOR PERSONAL USE.**
 
@@ -19,7 +19,7 @@ I recommend [Git for Windows](https://gitforwindows.org/).
 
 1. Clone this repository.
 1. Give `ToshitaiRecorder` a permission of execution.
-1. Run.
+1. Run **on Tuesday**.
 1. Wait.
 
 ```
