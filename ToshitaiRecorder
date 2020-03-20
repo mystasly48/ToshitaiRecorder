@@ -39,7 +39,7 @@ done
 
 printf 'Recording for '$duration' secs to '$file'.flv and '$file'.mp4\n\n'
 
-rtmpdump -r rtmp://fms-base1.mitene.ad.jp/agqr/aandg1b --stop $duration --live -o $full.flv
+rtmpdump -r rtmp://fms-base1.mitene.ad.jp/agqr/aandg1 --stop $duration --live -o $full.flv
 ffmpeg -i $full.flv -acodec copy -vcodec copy $full.mp4
 
 printf '\nSaved to '$file'.flv and '$file'.mp4\n'
