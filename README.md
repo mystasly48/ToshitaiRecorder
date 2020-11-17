@@ -10,9 +10,9 @@ Official website: [セブン-イレブン presents 佐倉としたい大西 | �
 
 ## Requirements
 
-You need to install [rtmpdump](https://rtmpdump.mplayerhq.hu/) and [ffmpeg](https://www.ffmpeg.org/).
+You need to install [ffmpeg](https://www.ffmpeg.org/).
 
-Also, if you are Windows user, you need an environment that can run bash script.
+Also, if you are Windows user, you need an environment that can execute bash script.
 I recommend [Git for Windows](https://gitforwindows.org/).
 
 ## Usage
