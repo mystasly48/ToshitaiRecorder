@@ -30,7 +30,7 @@ path=""
 file="$episode"_"$now_date"
 full="$path""$file"
 
-while [[ -e "$full".flv || -e "$full".mp4 ]]
+while [ -e "$full".mp4 ]
 do
   echo "Already exists "$file" file! We connect some random characters."
   file+="_"
@@ -39,8 +39,6 @@ done
 
 printf 'Recording for '$duration' secs to '$file'.flv and '$file'.mp4\n\n'
 
-rtmpdump -r rtmp://fms-base1.mitene.ad.jp/agqr/aandg1 --stop $duration --live -o $full.flv
-ffmpeg -i $full.flv -acodec copy -vcodec copy $full.mp4
+ffmpeg -protocol_whitelist file,http,https,tcp,tls,crypto -i https://www.uniqueradio.jp/agplayer5/hls/mbr-ff.m3u8 -movflags faststart -t $duration -c copy $full.mp4
 
-printf '\nSaved to '$file'.flv and '$file'.mp4\n'
-
+printf '\nSaved to '$file'.mp4\n'
