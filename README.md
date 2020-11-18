@@ -29,6 +29,27 @@ chmod u+x ./ToshitaiRecorder
 ./ToshitaiRecorder
 ```
 
+## Customize
+
+You can use cron to schedule to run the script.
+
+But the recording file will be saved in a directory **where the script was executed**.
+
+It means the script tries to save the file on `/usr/bin/` but it doesn't have permission to write and the recording will be failed.
+
+
+You can configure the path where the recording files will be saved, by editing `path=""` variable [on line 29](https://github.com/mystasly48/ToshitaiRecorder/blob/master/ToshitaiRecorder#L29).
+
+For example
+```
+path="/mnt/c/radio/ToshitaiRecorder/"
+```
+
+Also, an example setting of cron is
+```
+28 23 * * 2 /mnt/c/radio/ToshitaiRecorder/ToshitaiRecorder
+```
+
 ## Original
 
 [mystasly48/ToshitaiRecorder.sh on GitHub Gist](https://gist.github.com/mystasly48/07b4b4167cfbb91c97bec846dd2c5c3d)
