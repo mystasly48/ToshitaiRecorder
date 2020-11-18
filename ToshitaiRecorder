@@ -11,8 +11,8 @@ duration=1743
 echo "Now   : " `date +"%Y/%m/%d %H:%M:%S"`
 echo "Starts: " `date --date "$now_date $start_hours hours $start_mins minutes" +"%Y/%m/%d %H:%M:%S"`
 
-# wait until 2 secs before the start
-((waiting = start_time - now_time - 2)) 
+# wait until 20 secs after start
+((waiting = start_time - now_time + 20)) 
 if [ $waiting -gt 0 ] ; then
   printf 'Wait recording for '$waiting' secs\n'
   sleep $waiting
@@ -37,7 +37,7 @@ do
   file+=`date +%N`
 done
 
-printf 'Recording for '$duration' secs to '$file'.flv and '$file'.mp4\n\n'
+printf 'Recording for '$duration' secs to '$file'.mp4\n\n'
 
 ffmpeg -protocol_whitelist file,http,https,tcp,tls,crypto -i https://www.uniqueradio.jp/agplayer5/hls/mbr-ff.m3u8 -movflags faststart -t $duration -c copy $full.mp4
 
